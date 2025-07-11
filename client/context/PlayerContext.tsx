@@ -7,6 +7,7 @@ export interface Song {
   album: string;
   duration: string;
   image: string;
+  audioUrl: string;
 }
 
 interface PlayerState {
