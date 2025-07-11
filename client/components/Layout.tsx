@@ -41,7 +41,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="h-screen bg-black text-white flex flex-col">
       {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-20 left-0 right-0 bg-spotify-gray-900 border-t border-spotify-gray-600 z-10 backdrop-blur-lg bg-opacity-95">
+      <div className="md:hidden fixed bottom-20 left-0 right-0 glass-dark backdrop-blur-2xl z-10 border-t border-white border-opacity-10">
         <div className="flex items-center justify-around py-3">
           <button
             onClick={() => navigate("/")}
@@ -75,14 +75,14 @@ export default function Layout({ children }: LayoutProps) {
       {/* Main Content Area */}
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
-        <div className="hidden md:flex w-64 bg-black flex-col transition-all duration-300 ease-in-out">
+        <div className="hidden md:flex w-64 bg-gradient-to-b from-spotify-black to-spotify-gray-900 flex-col transition-all duration-300 ease-in-out border-r border-spotify-gray-800">
           {/* Logo */}
           <div className="p-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-spotify-green rounded-full flex items-center justify-center">
-                <Play className="w-4 h-4 text-black fill-current" />
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-spotify-green to-spotify-green-light rounded-full flex items-center justify-center shadow-glow">
+                <Play className="w-5 h-5 text-black fill-current" />
               </div>
-              <span className="text-xl font-bold">Spotify</span>
+              <span className="text-2xl font-bold text-gradient">Spotify</span>
             </div>
           </div>
 
@@ -173,14 +173,16 @@ export default function Layout({ children }: LayoutProps) {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 bg-gradient-to-b from-spotify-gray-900 to-spotify-dark-gray overflow-y-auto">
+        <div className="flex-1 bg-gradient-dark overflow-y-auto relative">
+          {/* Dynamic gradient overlay */}
+          <div className="absolute inset-0 bg-animated-gradient opacity-5 pointer-events-none"></div>
           {/* Mobile Header */}
-          <div className="md:hidden sticky top-0 bg-spotify-gray-900 bg-opacity-90 backdrop-blur-md z-10 p-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-spotify-green rounded-full flex items-center justify-center">
+          <div className="md:hidden sticky top-0 glass-dark backdrop-blur-2xl z-10 p-4 border-b border-white border-opacity-10">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-spotify-green to-spotify-green-light rounded-full flex items-center justify-center shadow-glow">
                 <Play className="w-4 h-4 text-black fill-current" />
               </div>
-              <span className="text-xl font-bold">Spotify</span>
+              <span className="text-xl font-bold text-gradient">Spotify</span>
             </div>
           </div>
           <div className="pb-32 md:pb-0">{children}</div>
