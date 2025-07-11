@@ -191,7 +191,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
 
         {/* Volume and Additional Controls */}
-        <div className="flex items-center gap-2 w-80 justify-end">
+        <div className="hidden lg:flex items-center gap-2 w-80 justify-end">
           <Button
             variant="ghost"
             size="sm"
