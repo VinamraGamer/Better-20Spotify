@@ -75,7 +75,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Main Content Area */}
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
-        <div className="hidden md:flex w-64 bg-black flex-col">
+        <div className="hidden md:flex w-64 bg-black flex-col transition-all duration-300 ease-in-out">
           {/* Logo */}
           <div className="p-6">
             <div className="flex items-center gap-2">
@@ -91,10 +91,10 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               onClick={() => navigate("/")}
-              className={`w-full justify-start gap-4 h-10 px-3 ${
+              className={`w-full justify-start gap-4 h-10 px-3 transition-all duration-200 ease-in-out transform hover:scale-105 ${
                 isActive("/")
-                  ? "text-white bg-spotify-gray-700"
-                  : "text-spotify-gray-300 hover:text-white"
+                  ? "text-white bg-spotify-gray-700 shadow-lg"
+                  : "text-spotify-gray-300 hover:text-white hover:bg-spotify-gray-800"
               }`}
             >
               <Home className="w-6 h-6" />
@@ -103,10 +103,10 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               onClick={() => navigate("/search")}
-              className={`w-full justify-start gap-4 h-10 px-3 ${
+              className={`w-full justify-start gap-4 h-10 px-3 transition-all duration-200 ease-in-out transform hover:scale-105 ${
                 isActive("/search")
-                  ? "text-white bg-spotify-gray-700"
-                  : "text-spotify-gray-300 hover:text-white"
+                  ? "text-white bg-spotify-gray-700 shadow-lg"
+                  : "text-spotify-gray-300 hover:text-white hover:bg-spotify-gray-800"
               }`}
             >
               <Search className="w-6 h-6" />
