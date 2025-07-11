@@ -137,7 +137,7 @@ export default function Search() {
               placeholder="What do you want to listen to?"
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
-              className="pl-12 h-12 bg-white text-black border-0 placeholder:text-gray-500 focus:ring-2 focus:ring-spotify-green"
+              className="pl-12 h-12 bg-white text-black border-0 placeholder:text-gray-500 focus:ring-2 focus:ring-spotify-green transition-all duration-300 ease-in-out focus:scale-105 shadow-lg hover:shadow-xl"
             />
           </div>
         </div>
