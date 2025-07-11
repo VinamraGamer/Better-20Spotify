@@ -8,6 +8,7 @@ import {
   MoreHorizontal,
   Search as SearchIcon,
 } from "lucide-react";
+import { usePlayer, Song } from "../context/PlayerContext";
 
 const mockSongs = [
   {
