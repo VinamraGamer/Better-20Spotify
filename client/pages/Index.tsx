@@ -93,7 +93,64 @@ const recentlyPlayed = [
   },
 ];
 
+const mockSongs: Song[] = [
+  {
+    id: "1",
+    title: "Blinding Lights",
+    artist: "The Weeknd",
+    album: "After Hours",
+    duration: "3:20",
+    image: "/placeholder.svg",
+  },
+  {
+    id: "2",
+    title: "Shape of You",
+    artist: "Ed Sheeran",
+    album: "÷ (Divide)",
+    duration: "3:53",
+    image: "/placeholder.svg",
+  },
+  {
+    id: "3",
+    title: "Someone Like You",
+    artist: "Adele",
+    album: "21",
+    duration: "4:45",
+    image: "/placeholder.svg",
+  },
+  {
+    id: "4",
+    title: "Watermelon Sugar",
+    artist: "Harry Styles",
+    album: "Fine Line",
+    duration: "2:54",
+    image: "/placeholder.svg",
+  },
+  {
+    id: "5",
+    title: "Levitating",
+    artist: "Dua Lipa",
+    album: "Future Nostalgia",
+    duration: "3:23",
+    image: "/placeholder.svg",
+  },
+];
+
 export default function Index() {
+  const { dispatch } = usePlayer();
+
+  const handlePlaySong = (song: Song) => {
+    dispatch({ type: "PLAY_SONG", payload: song });
+    dispatch({ type: "SET_QUEUE", payload: mockSongs });
+  };
+
+  const handlePlayPlaylist = (playlistSongs: Song[]) => {
+    if (playlistSongs.length > 0) {
+      dispatch({ type: "PLAY_SONG", payload: playlistSongs[0] });
+      dispatch({ type: "SET_QUEUE", payload: playlistSongs });
+    }
+  };
+
   return (
     <Layout>
       <div className="p-6">
