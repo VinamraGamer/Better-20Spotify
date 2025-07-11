@@ -176,6 +176,10 @@ export default function Layout({ children }: LayoutProps) {
         <div className="flex-1 bg-gradient-dark overflow-y-auto relative">
           {/* Dynamic gradient overlay */}
           <div className="absolute inset-0 bg-animated-gradient opacity-5 pointer-events-none"></div>
+          {/* Floating orbs for visual depth */}
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-spotify-green opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute bottom-40 right-1/3 w-80 h-80 bg-blue-500 opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-purple-500 opacity-10 rounded-full blur-3xl pointer-events-none"></div>
           {/* Mobile Header */}
           <div className="md:hidden sticky top-0 glass-dark backdrop-blur-2xl z-10 p-4 border-b border-white border-opacity-10">
             <div className="flex items-center gap-3">
