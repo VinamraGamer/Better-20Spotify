@@ -120,7 +120,7 @@ export default function Layout({ children }: LayoutProps) {
               <Button
                 variant="ghost"
                 onClick={() => navigate("/library")}
-                className={`justify-start gap-4 h-10 px-0 ${
+                className={`justify-start gap-4 h-10 px-0 transition-all duration-200 ease-in-out ${
                   isActive("/library")
                     ? "text-white"
                     : "text-spotify-gray-300 hover:text-white"
@@ -163,7 +163,7 @@ export default function Layout({ children }: LayoutProps) {
               ].map((playlist) => (
                 <button
                   key={playlist}
-                  className="w-full text-left px-3 py-2 text-sm text-spotify-gray-300 hover:text-white rounded transition-colors"
+                  className="w-full text-left px-3 py-2 text-sm text-spotify-gray-300 hover:text-white rounded transition-all duration-200 ease-in-out hover:bg-spotify-gray-800 transform hover:translate-x-1"
                 >
                   {playlist}
                 </button>
