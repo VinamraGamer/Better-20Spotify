@@ -54,13 +54,18 @@ const initialState: PlayerState = {
     album: "After Hours",
     duration: "3:20",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/magic-chime-02.mp3", // Sample audio
   },
   isPlaying: false,
-  progress: 30,
+  progress: 0,
+  currentTime: 0,
+  duration: 0,
   volume: 50,
   queue: [],
   isShuffled: false,
   repeatMode: "off",
+  isLoading: false,
+  error: null,
 };
 
 function playerReducer(state: PlayerState, action: PlayerAction): PlayerState {
