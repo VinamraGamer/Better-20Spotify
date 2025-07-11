@@ -120,7 +120,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Bottom Player */}
       <div className="h-20 bg-spotify-gray-800 border-t border-spotify-gray-600 flex items-center px-4">
         {/* Currently Playing */}
-        <div className="flex items-center gap-4 w-80">
+        <div className="flex items-center gap-4 w-80 min-w-0">
           <div className="w-14 h-14 bg-spotify-gray-600 rounded flex-shrink-0"></div>
           <div className="min-w-0">
             <div className="text-sm font-medium text-white truncate">
