@@ -35,12 +35,16 @@ type PlayerAction =
   | { type: "PLAY_SONG"; payload: Song }
   | { type: "TOGGLE_PLAY" }
   | { type: "SET_PROGRESS"; payload: number }
+  | { type: "SET_CURRENT_TIME"; payload: number }
+  | { type: "SET_DURATION"; payload: number }
   | { type: "SET_VOLUME"; payload: number }
   | { type: "NEXT_SONG" }
   | { type: "PREVIOUS_SONG" }
   | { type: "TOGGLE_SHUFFLE" }
   | { type: "TOGGLE_REPEAT" }
-  | { type: "SET_QUEUE"; payload: Song[] };
+  | { type: "SET_QUEUE"; payload: Song[] }
+  | { type: "SET_LOADING"; payload: boolean }
+  | { type: "SET_ERROR"; payload: string | null };
 
 const initialState: PlayerState = {
   currentSong: {
