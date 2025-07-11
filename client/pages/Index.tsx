@@ -219,6 +219,7 @@ export default function Index() {
                 <Button
                   variant="ghost"
                   size="sm"
+                  onClick={() => handlePlayPlaylist(mockSongs)}
                   className="w-12 h-12 rounded-full bg-spotify-green text-black hover:bg-spotify-green-hover opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 mr-4"
                 >
                   <Play className="w-5 h-5 fill-current" />
