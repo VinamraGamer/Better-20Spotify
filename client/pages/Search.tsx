@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 import { usePlayer, Song } from "../context/PlayerContext";
 
-const mockSongs = [
+const mockSongs: Song[] = [
   {
-    id: 1,
+    id: "1",
     title: "Blinding Lights",
     artist: "The Weeknd",
     album: "After Hours",
@@ -20,7 +20,7 @@ const mockSongs = [
     image: "/placeholder.svg",
   },
   {
-    id: 2,
+    id: "2",
     title: "Shape of You",
     artist: "Ed Sheeran",
     album: "÷ (Divide)",
@@ -28,7 +28,7 @@ const mockSongs = [
     image: "/placeholder.svg",
   },
   {
-    id: 3,
+    id: "3",
     title: "Someone Like You",
     artist: "Adele",
     album: "21",
@@ -36,7 +36,7 @@ const mockSongs = [
     image: "/placeholder.svg",
   },
   {
-    id: 4,
+    id: "4",
     title: "Watermelon Sugar",
     artist: "Harry Styles",
     album: "Fine Line",
@@ -44,7 +44,7 @@ const mockSongs = [
     image: "/placeholder.svg",
   },
   {
-    id: 5,
+    id: "5",
     title: "Levitating",
     artist: "Dua Lipa",
     album: "Future Nostalgia",
@@ -52,7 +52,7 @@ const mockSongs = [
     image: "/placeholder.svg",
   },
   {
-    id: 6,
+    id: "6",
     title: "Good 4 U",
     artist: "Olivia Rodrigo",
     album: "SOUR",
@@ -60,7 +60,7 @@ const mockSongs = [
     image: "/placeholder.svg",
   },
   {
-    id: 7,
+    id: "7",
     title: "Stay",
     artist: "The Kid LAROI, Justin Bieber",
     album: "F*CK LOVE 3",
@@ -68,7 +68,7 @@ const mockSongs = [
     image: "/placeholder.svg",
   },
   {
-    id: 8,
+    id: "8",
     title: "Industry Baby",
     artist: "Lil Nas X, Jack Harlow",
     album: "MONTERO",
