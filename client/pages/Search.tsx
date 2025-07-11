@@ -171,7 +171,11 @@ export default function Search() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="opacity-0 group-hover:opacity-100 p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
+                    className="opacity-0 group-hover:opacity-100 p-0 w-8 h-8 text-spotify-gray-400 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      // Add like functionality here
+                    }}
                   >
                     <Heart className="w-4 h-4" />
                   </Button>
