@@ -172,13 +172,98 @@ function playerReducer(state: PlayerState, action: PlayerAction): PlayerState {
 const PlayerContext = createContext<{
   state: PlayerState;
   dispatch: React.Dispatch<PlayerAction>;
+  audioRef: React.RefObject<HTMLAudioElement>;
 } | null>(null);
 
 export function PlayerProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(playerReducer, initialState);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Handle audio events
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleLoadedMetadata = () => {
+      dispatch({ type: "SET_DURATION", payload: audio.duration });
+    };
+
+    const handleTimeUpdate = () => {
+      dispatch({ type: "SET_CURRENT_TIME", payload: audio.currentTime });
+    };
+
+    const handleEnded = () => {
+      if (state.repeatMode === "one") {
+        audio.currentTime = 0;
+        audio.play();
+      } else {
+        dispatch({ type: "NEXT_SONG" });
+      }
+    };
+
+    const handleError = () => {
+      dispatch({ type: "SET_ERROR", payload: "Failed to load audio" });
+    };
+
+    const handleCanPlay = () => {
+      dispatch({ type: "SET_LOADING", payload: false });
+    };
+
+    audio.addEventListener("loadedmetadata", handleLoadedMetadata);
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    audio.addEventListener("ended", handleEnded);
+    audio.addEventListener("error", handleError);
+    audio.addEventListener("canplay", handleCanPlay);
+
+    return () => {
+      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      audio.removeEventListener("timeupdate", handleTimeUpdate);
+      audio.removeEventListener("ended", handleEnded);
+      audio.removeEventListener("error", handleError);
+      audio.removeEventListener("canplay", handleCanPlay);
+    };
+  }, [state.repeatMode]);
+
+  // Handle play/pause state changes
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (state.isPlaying) {
+      audio.play().catch(() => {
+        dispatch({ type: "SET_ERROR", payload: "Failed to play audio" });
+      });
+    } else {
+      audio.pause();
+    }
+  }, [state.isPlaying]);
+
+  // Handle song changes
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio || !state.currentSong) return;
+
+    audio.src = state.currentSong.audioUrl;
+    audio.load();
+
+    if (state.isPlaying) {
+      audio.play().catch(() => {
+        dispatch({ type: "SET_ERROR", payload: "Failed to play audio" });
+      });
+    }
+  }, [state.currentSong?.id]);
+
+  // Handle volume changes
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.volume = state.volume / 100;
+  }, [state.volume]);
 
   return (
-    <PlayerContext.Provider value={{ state, dispatch }}>
+    <PlayerContext.Provider value={{ state, dispatch, audioRef }}>
+      <audio ref={audioRef} preload="metadata" />
       {children}
     </PlayerContext.Provider>
   );
