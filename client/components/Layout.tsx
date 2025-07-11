@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import { usePlayer } from "../context/PlayerContext";
+import { usePlayer, formatTime } from "../context/PlayerContext";
 
 interface LayoutProps {
   children: ReactNode;
