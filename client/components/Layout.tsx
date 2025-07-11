@@ -91,10 +91,10 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               onClick={() => navigate("/")}
-              className={`w-full justify-start gap-4 h-10 px-3 transition-all duration-200 ease-in-out transform hover:scale-105 ${
+              className={`w-full justify-start gap-4 h-12 px-4 transition-all duration-300 ease-in-out transform hover:scale-105 rounded-xl ${
                 isActive("/")
-                  ? "text-white bg-spotify-gray-700 shadow-lg"
-                  : "text-spotify-gray-300 hover:text-white hover:bg-spotify-gray-800"
+                  ? "text-white bg-gradient-to-r from-spotify-green to-spotify-green-light shadow-glow text-black font-bold"
+                  : "text-spotify-gray-300 hover:text-white glass hover:border-opacity-20"
               }`}
             >
               <Home className="w-6 h-6" />
@@ -103,10 +103,10 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               onClick={() => navigate("/search")}
-              className={`w-full justify-start gap-4 h-10 px-3 transition-all duration-200 ease-in-out transform hover:scale-105 ${
+              className={`w-full justify-start gap-4 h-12 px-4 transition-all duration-300 ease-in-out transform hover:scale-105 rounded-xl ${
                 isActive("/search")
-                  ? "text-white bg-spotify-gray-700 shadow-lg"
-                  : "text-spotify-gray-300 hover:text-white hover:bg-spotify-gray-800"
+                  ? "text-white bg-gradient-to-r from-spotify-green to-spotify-green-light shadow-glow text-black font-bold"
+                  : "text-spotify-gray-300 hover:text-white glass hover:border-opacity-20"
               }`}
             >
               <Search className="w-6 h-6" />
