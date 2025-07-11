@@ -236,9 +236,11 @@ export default function Index() {
         </div>
 
         {/* Made for You */}
-        <section className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-white">Made for you</h2>
+        <section className="mb-12 relative z-10">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-black text-white tracking-tight">
+              Made for you
+            </h2>
             <Button
               variant="ghost"
               className="text-spotify-gray-400 hover:text-white text-sm font-semibold"
@@ -281,9 +283,11 @@ export default function Index() {
         </section>
 
         {/* Recently Played */}
-        <section className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-white">Recently played</h2>
+        <section className="mb-12 relative z-10">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-black text-white tracking-tight">
+              Recently played
+            </h2>
             <Button
               variant="ghost"
               className="text-spotify-gray-400 hover:text-white text-sm font-semibold"
@@ -325,9 +329,11 @@ export default function Index() {
         </section>
 
         {/* Jump back in */}
-        <section>
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-white">Jump back in</h2>
+        <section className="relative z-10">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-black text-white tracking-tight">
+              Jump back in
+            </h2>
             <Button
               variant="ghost"
               className="text-spotify-gray-400 hover:text-white text-sm font-semibold"
