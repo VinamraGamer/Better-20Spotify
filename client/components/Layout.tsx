@@ -130,7 +130,16 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Main Content */}
         <div className="flex-1 bg-gradient-to-b from-spotify-gray-900 to-spotify-dark-gray overflow-y-auto">
-          {children}
+          {/* Mobile Header */}
+          <div className="md:hidden sticky top-0 bg-spotify-gray-900 bg-opacity-90 backdrop-blur-md z-10 p-4">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-spotify-green rounded-full flex items-center justify-center">
+                <Play className="w-4 h-4 text-black fill-current" />
+              </div>
+              <span className="text-xl font-bold">Spotify</span>
+            </div>
+          </div>
+          <div className="pb-32 md:pb-0">{children}</div>
         </div>
       </div>
 
