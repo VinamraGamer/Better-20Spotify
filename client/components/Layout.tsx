@@ -29,7 +29,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Main Content Area */}
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
-        <div className="w-64 bg-black flex flex-col">
+        <div className="hidden md:flex w-64 bg-black flex-col">
           {/* Logo */}
           <div className="p-6">
             <div className="flex items-center gap-2">
