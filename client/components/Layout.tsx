@@ -224,10 +224,10 @@ export default function Layout({ children }: LayoutProps) {
               variant="ghost"
               size="sm"
               onClick={() => dispatch({ type: "TOGGLE_SHUFFLE" })}
-              className={`hidden sm:block p-0 w-8 h-8 transition-all duration-300 ease-in-out transform hover:scale-110 ${
+              className={`hidden sm:block p-0 w-10 h-10 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 ${
                 playerState.isShuffled
-                  ? "text-spotify-green"
-                  : "text-spotify-gray-400 hover:text-white"
+                  ? "text-spotify-green bg-spotify-green bg-opacity-20 shadow-glow"
+                  : "text-spotify-gray-400 hover:text-white glass"
               }`}
             >
               <Shuffle className="w-4 h-4" />
@@ -244,7 +244,7 @@ export default function Layout({ children }: LayoutProps) {
               variant="ghost"
               size="sm"
               onClick={() => dispatch({ type: "TOGGLE_PLAY" })}
-              className="p-0 w-10 h-10 bg-white text-black hover:bg-gray-200 rounded-full transition-all duration-200 ease-in-out transform hover:scale-110 active:scale-95 shadow-lg hover:shadow-xl"
+              className="p-0 w-12 h-12 bg-gradient-to-br from-white to-gray-100 text-black hover:from-gray-100 hover:to-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-115 active:scale-95 shadow-glow hover:shadow-xl border-2 border-white border-opacity-20"
             >
               {playerState.isPlaying ? (
                 <Pause className="w-5 h-5" />
@@ -264,10 +264,10 @@ export default function Layout({ children }: LayoutProps) {
               variant="ghost"
               size="sm"
               onClick={() => dispatch({ type: "TOGGLE_REPEAT" })}
-              className={`hidden sm:block p-0 w-8 h-8 ${
+              className={`hidden sm:block p-0 w-10 h-10 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 ${
                 playerState.repeatMode !== "off"
-                  ? "text-spotify-green"
-                  : "text-spotify-gray-400 hover:text-white"
+                  ? "text-spotify-green bg-spotify-green bg-opacity-20 shadow-glow"
+                  : "text-spotify-gray-400 hover:text-white glass"
               }`}
             >
               <Repeat className="w-4 h-4" />
