@@ -149,8 +149,18 @@ export default function Search() {
           </div>
         </div>
 
+        {/* Loading State */}
+        {isSearching && (
+          <div className="flex items-center justify-center py-16">
+            <div className="flex items-center gap-3">
+              <LoadingSpinner size="md" />
+              <span className="text-spotify-gray-400">Searching...</span>
+            </div>
+          </div>
+        )}
+
         {/* Search Results */}
-        {searchResults.length > 0 && (
+        {!isSearching && searchResults.length > 0 && (
           <div className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-6">Songs</h2>
             <div className="space-y-2">
