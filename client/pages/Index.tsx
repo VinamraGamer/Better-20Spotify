@@ -253,11 +253,11 @@ export default function Index() {
               <div
                 key={playlist.id}
                 onClick={() => handlePlayPlaylist(mockSongs)}
-                className="bg-spotify-gray-800 hover:bg-spotify-gray-700 p-4 rounded-lg cursor-pointer transition-all duration-300 ease-in-out group transform hover:scale-105 hover:shadow-2xl"
+                className="glass backdrop-blur-xl p-6 rounded-2xl cursor-pointer transition-all duration-500 ease-out group transform hover:scale-105 shadow-modern hover:shadow-glow border border-white border-opacity-10 hover:border-opacity-20"
               >
-                <div className="relative mb-4">
+                <div className="relative mb-6">
                   <div
-                    className={`w-full aspect-square bg-gradient-to-br ${playlist.color} rounded-md shadow-lg`}
+                    className={`w-full aspect-square bg-gradient-to-br ${playlist.color} rounded-xl shadow-modern group-hover:shadow-glow-purple`}
                   ></div>
                   <Button
                     variant="ghost"
@@ -271,10 +271,10 @@ export default function Index() {
                     <Play className="w-5 h-5 fill-current" />
                   </Button>
                 </div>
-                <h3 className="font-semibold text-white text-sm mb-2 line-clamp-1">
+                <h3 className="font-bold text-white text-base mb-3 line-clamp-1 tracking-tight">
                   {playlist.title}
                 </h3>
-                <p className="text-spotify-gray-400 text-xs line-clamp-2">
+                <p className="text-spotify-gray-300 text-sm line-clamp-2 leading-relaxed">
                   {playlist.description}
                 </p>
               </div>
@@ -301,9 +301,9 @@ export default function Index() {
                 key={item.id}
                 className="bg-spotify-gray-800 hover:bg-spotify-gray-700 p-4 rounded-lg cursor-pointer transition-all duration-300 group"
               >
-                <div className="relative mb-4">
+                <div className="relative mb-6">
                   <div
-                    className={`w-full aspect-square bg-gradient-to-br ${item.color} rounded-md shadow-lg`}
+                    className={`w-full aspect-square bg-gradient-to-br ${item.color} rounded-xl shadow-modern group-hover:shadow-glow-purple`}
                   ></div>
                   <Button
                     variant="ghost"
@@ -317,10 +317,10 @@ export default function Index() {
                     <Play className="w-5 h-5 fill-current" />
                   </Button>
                 </div>
-                <h3 className="font-semibold text-white text-sm mb-2 line-clamp-1">
+                <h3 className="font-bold text-white text-base mb-3 line-clamp-1 tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-spotify-gray-400 text-xs line-clamp-2">
+                <p className="text-spotify-gray-300 text-sm line-clamp-2 leading-relaxed">
                   {item.subtitle}
                 </p>
               </div>
@@ -346,11 +346,11 @@ export default function Index() {
               <div
                 key={playlist.id}
                 onClick={() => handlePlayPlaylist(mockSongs)}
-                className="bg-spotify-gray-800 hover:bg-spotify-gray-700 p-4 rounded-lg cursor-pointer transition-all duration-300 ease-in-out group transform hover:scale-105 hover:shadow-2xl"
+                className="glass backdrop-blur-xl p-6 rounded-2xl cursor-pointer transition-all duration-500 ease-out group transform hover:scale-105 shadow-modern hover:shadow-glow border border-white border-opacity-10 hover:border-opacity-20"
               >
-                <div className="relative mb-4">
+                <div className="relative mb-6">
                   <div
-                    className={`w-full aspect-square bg-gradient-to-br ${playlist.color} rounded-md shadow-lg`}
+                    className={`w-full aspect-square bg-gradient-to-br ${playlist.color} rounded-xl shadow-modern group-hover:shadow-glow-purple`}
                   ></div>
                   <Button
                     variant="ghost"
@@ -364,10 +364,10 @@ export default function Index() {
                     <Play className="w-5 h-5 fill-current" />
                   </Button>
                 </div>
-                <h3 className="font-semibold text-white text-sm mb-2 line-clamp-1">
+                <h3 className="font-bold text-white text-base mb-3 line-clamp-1 tracking-tight">
                   {playlist.title}
                 </h3>
-                <p className="text-spotify-gray-400 text-xs line-clamp-2">
+                <p className="text-spotify-gray-300 text-sm line-clamp-2 leading-relaxed">
                   {playlist.description}
                 </p>
               </div>
