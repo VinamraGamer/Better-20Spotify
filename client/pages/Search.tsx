@@ -203,7 +203,7 @@ export default function Search() {
               {browseCategories.map((category) => (
                 <div
                   key={category.id}
-                  className={`${category.color} rounded-lg p-4 aspect-square cursor-pointer hover:scale-105 transition-transform duration-200 relative overflow-hidden`}
+                  className={`${category.color} rounded-lg p-4 aspect-square cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out relative overflow-hidden transform hover:shadow-2xl hover:brightness-110`}
                 >
                   <h3 className="text-white font-bold text-lg mb-2">
                     {category.title}
