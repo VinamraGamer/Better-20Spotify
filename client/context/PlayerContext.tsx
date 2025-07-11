@@ -75,6 +75,8 @@ function playerReducer(state: PlayerState, action: PlayerAction): PlayerState {
         ...state,
         currentSong: action.payload,
         isPlaying: true,
+        isLoading: true,
+        error: null,
       };
     case "TOGGLE_PLAY":
       return {
@@ -85,6 +87,19 @@ function playerReducer(state: PlayerState, action: PlayerAction): PlayerState {
       return {
         ...state,
         progress: action.payload,
+      };
+    case "SET_CURRENT_TIME":
+      return {
+        ...state,
+        currentTime: action.payload,
+        progress:
+          state.duration > 0 ? (action.payload / state.duration) * 100 : 0,
+      };
+    case "SET_DURATION":
+      return {
+        ...state,
+        duration: action.payload,
+        isLoading: false,
       };
     case "SET_VOLUME":
       return {
@@ -100,6 +115,8 @@ function playerReducer(state: PlayerState, action: PlayerAction): PlayerState {
         return {
           ...state,
           currentSong: state.queue[nextIndex],
+          isPlaying: true,
+          isLoading: true,
         };
       }
       return state;
@@ -113,6 +130,8 @@ function playerReducer(state: PlayerState, action: PlayerAction): PlayerState {
         return {
           ...state,
           currentSong: state.queue[prevIndex],
+          isPlaying: true,
+          isLoading: true,
         };
       }
       return state;
@@ -133,6 +152,17 @@ function playerReducer(state: PlayerState, action: PlayerAction): PlayerState {
       return {
         ...state,
         queue: action.payload,
+      };
+    case "SET_LOADING":
+      return {
+        ...state,
+        isLoading: action.payload,
+      };
+    case "SET_ERROR":
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false,
       };
     default:
       return state;
