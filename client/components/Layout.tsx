@@ -315,7 +315,15 @@ export default function Layout({ children }: LayoutProps) {
           </Button>
           <div className="flex items-center gap-2">
             <Volume2 className="w-4 h-4 text-spotify-gray-400" />
-            <Slider defaultValue={[50]} max={100} step={1} className="w-20" />
+            <Slider
+              value={[playerState.volume]}
+              onValueChange={(value) =>
+                dispatch({ type: "SET_VOLUME", payload: value[0] })
+              }
+              max={100}
+              step={1}
+              className="w-20"
+            />
           </div>
         </div>
       </div>
