@@ -155,7 +155,7 @@ export default function Index() {
     <Layout>
       <div className="p-6">
         {/* Header */}
-        <header className="flex items-center justify-between mb-8">
+        <header className="flex items-center justify-between mb-12 relative z-10">
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
@@ -191,14 +191,16 @@ export default function Index() {
         </header>
 
         {/* Greeting */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white mb-6">
+        <div className="mb-12 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
             Good{" "}
-            {new Date().getHours() < 12
-              ? "morning"
-              : new Date().getHours() < 17
-                ? "afternoon"
-                : "evening"}
+            <span className="text-gradient">
+              {new Date().getHours() < 12
+                ? "morning"
+                : new Date().getHours() < 17
+                  ? "afternoon"
+                  : "evening"}
+            </span>
           </h1>
 
           {/* Recently Played Grid */}
@@ -207,13 +209,13 @@ export default function Index() {
               <div
                 key={item.id}
                 onClick={() => handlePlayPlaylist(mockSongs)}
-                className="bg-spotify-gray-700 bg-opacity-80 hover:bg-opacity-100 rounded-md flex items-center gap-4 group cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-xl"
+                className="glass backdrop-blur-xl rounded-xl flex items-center gap-4 group cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-[1.02] shadow-modern hover:shadow-glow border border-white border-opacity-10"
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-l-md flex-shrink-0`}
+                  className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-l-xl flex-shrink-0 shadow-lg`}
                 ></div>
-                <div className="flex-1 min-w-0 py-3">
-                  <h3 className="font-semibold text-white text-sm truncate">
+                <div className="flex-1 min-w-0 py-4">
+                  <h3 className="font-bold text-white text-base truncate tracking-tight">
                     {item.title}
                   </h3>
                 </div>
