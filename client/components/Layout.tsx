@@ -41,11 +41,11 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="h-screen bg-black text-white flex flex-col">
       {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-20 left-0 right-0 bg-spotify-gray-900 border-t border-spotify-gray-600 z-10">
+      <div className="md:hidden fixed bottom-20 left-0 right-0 bg-spotify-gray-900 border-t border-spotify-gray-600 z-10 backdrop-blur-lg bg-opacity-95">
         <div className="flex items-center justify-around py-3">
           <button
             onClick={() => navigate("/")}
-            className={`flex flex-col items-center gap-1 ${
+            className={`flex flex-col items-center gap-1 transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95 ${
               isActive("/") ? "text-white" : "text-spotify-gray-400"
             }`}
           >
@@ -54,7 +54,7 @@ export default function Layout({ children }: LayoutProps) {
           </button>
           <button
             onClick={() => navigate("/search")}
-            className={`flex flex-col items-center gap-1 ${
+            className={`flex flex-col items-center gap-1 transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95 ${
               isActive("/search") ? "text-white" : "text-spotify-gray-400"
             }`}
           >
@@ -63,7 +63,7 @@ export default function Layout({ children }: LayoutProps) {
           </button>
           <button
             onClick={() => navigate("/library")}
-            className={`flex flex-col items-center gap-1 ${
+            className={`flex flex-col items-center gap-1 transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95 ${
               isActive("/library") ? "text-white" : "text-spotify-gray-400"
             }`}
           >
