@@ -314,7 +314,7 @@ export default function Layout({ children }: LayoutProps) {
             size="sm"
             className="p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
           >
-            <ListMusic className="w-4 h-4" />
+            <ListMusic className="w-4 h-4" style={{ marginLeft: "6px" }} />
           </Button>
           <Button
             variant="ghost"
