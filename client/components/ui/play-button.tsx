@@ -37,7 +37,7 @@ export function PlayButton({
 
   return (
     <Button
-      ref={rippleRef}
+      ref={rippleRef as any}
       variant="ghost"
       size="sm"
       onClick={handleClick}
