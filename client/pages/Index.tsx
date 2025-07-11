@@ -160,14 +160,14 @@ export default function Index() {
             <Button
               variant="ghost"
               size="sm"
-              className="w-8 h-8 rounded-full bg-black bg-opacity-70 text-white hover:bg-opacity-80 p-0"
+              className="w-8 h-8 rounded-full bg-black bg-opacity-70 text-white hover:bg-opacity-80 p-0 transition-all duration-200 ease-in-out transform hover:scale-110 active:scale-95"
             >
               ←
             </Button>
             <Button
               variant="ghost"
               size="sm"
-              className="w-8 h-8 rounded-full bg-black bg-opacity-70 text-white hover:bg-opacity-80 p-0"
+              className="w-8 h-8 rounded-full bg-black bg-opacity-70 text-white hover:bg-opacity-80 p-0 transition-all duration-200 ease-in-out transform hover:scale-110 active:scale-95"
             >
               →
             </Button>
