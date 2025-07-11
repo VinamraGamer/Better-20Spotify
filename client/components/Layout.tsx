@@ -26,6 +26,23 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="h-screen bg-black text-white flex flex-col">
+      {/* Mobile Bottom Navigation */}
+      <div className="md:hidden fixed bottom-20 left-0 right-0 bg-spotify-gray-900 border-t border-spotify-gray-600 z-10">
+        <div className="flex items-center justify-around py-3">
+          <button className="flex flex-col items-center gap-1 text-white">
+            <Home className="w-6 h-6" />
+            <span className="text-xs">Home</span>
+          </button>
+          <button className="flex flex-col items-center gap-1 text-spotify-gray-400">
+            <Search className="w-6 h-6" />
+            <span className="text-xs">Search</span>
+          </button>
+          <button className="flex flex-col items-center gap-1 text-spotify-gray-400">
+            <Library className="w-6 h-6" />
+            <span className="text-xs">Your Library</span>
+          </button>
+        </div>
+      </div>
       {/* Main Content Area */}
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
