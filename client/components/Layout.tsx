@@ -208,11 +208,13 @@ export default function Layout({ children }: LayoutProps) {
 
           {/* Progress Bar */}
           <div className="flex items-center gap-2 w-full max-w-md">
-            <span className="text-xs text-spotify-gray-400 w-10 text-right">
+            <span className="hidden sm:block text-xs text-spotify-gray-400 w-10 text-right">
               0:00
             </span>
             <Slider defaultValue={[30]} max={100} step={1} className="flex-1" />
-            <span className="text-xs text-spotify-gray-400 w-10">3:45</span>
+            <span className="hidden sm:block text-xs text-spotify-gray-400 w-10">
+              3:45
+            </span>
           </div>
         </div>
 
