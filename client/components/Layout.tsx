@@ -168,11 +168,11 @@ export default function Layout({ children }: LayoutProps) {
         {/* Player Controls */}
         <div className="flex-1 flex flex-col items-center gap-2 px-2 sm:px-8">
           {/* Control Buttons */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <Button
               variant="ghost"
               size="sm"
-              className="p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
+              className="hidden sm:block p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
             >
               <Shuffle className="w-4 h-4" />
             </Button>
@@ -200,7 +200,7 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               size="sm"
-              className="p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
+              className="hidden sm:block p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
             >
               <Repeat className="w-4 h-4" />
             </Button>
