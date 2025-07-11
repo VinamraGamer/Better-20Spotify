@@ -176,14 +176,14 @@ export default function Index() {
             <Button
               variant="outline"
               size="sm"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-black"
+              className="bg-transparent border-white text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out transform hover:scale-105 active:scale-95"
             >
               Upgrade
             </Button>
             <Button
               variant="ghost"
               size="sm"
-              className="w-8 h-8 rounded-full bg-black text-white p-0"
+              className="w-8 h-8 rounded-full bg-black text-white p-0 transition-all duration-200 ease-in-out transform hover:scale-110 active:scale-95 hover:bg-spotify-gray-700"
             >
               U
             </Button>
