@@ -67,14 +67,24 @@ export default function Layout({ children }: LayoutProps) {
           <nav className="px-3 space-y-2">
             <Button
               variant="ghost"
-              className="w-full justify-start gap-4 text-spotify-gray-300 hover:text-white h-10 px-3"
+              onClick={() => navigate("/")}
+              className={`w-full justify-start gap-4 h-10 px-3 ${
+                isActive("/")
+                  ? "text-white bg-spotify-gray-700"
+                  : "text-spotify-gray-300 hover:text-white"
+              }`}
             >
               <Home className="w-6 h-6" />
               Home
             </Button>
             <Button
               variant="ghost"
-              className="w-full justify-start gap-4 text-spotify-gray-300 hover:text-white h-10 px-3"
+              onClick={() => navigate("/search")}
+              className={`w-full justify-start gap-4 h-10 px-3 ${
+                isActive("/search")
+                  ? "text-white bg-spotify-gray-700"
+                  : "text-spotify-gray-300 hover:text-white"
+              }`}
             >
               <Search className="w-6 h-6" />
               Search
