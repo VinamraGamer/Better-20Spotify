@@ -208,7 +208,7 @@ export default function Library() {
             {filteredItems.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center gap-4 p-2 rounded-md hover:bg-spotify-gray-700 group cursor-pointer"
+                className="flex items-center gap-4 p-2 rounded-md hover:bg-spotify-gray-700 group cursor-pointer transition-all duration-200 ease-in-out transform hover:scale-[1.02] hover:shadow-lg"
               >
                 <div className="relative">
                   <div
@@ -234,7 +234,7 @@ export default function Library() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="opacity-0 group-hover:opacity-100 p-0 w-10 h-10 text-spotify-gray-400 hover:text-white"
+                  className="opacity-0 group-hover:opacity-100 p-0 w-10 h-10 text-spotify-gray-400 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-95"
                 >
                   <Play className="w-5 h-5" />
                 </Button>
@@ -246,7 +246,7 @@ export default function Library() {
             {filteredItems.map((item) => (
               <div
                 key={item.id}
-                className="bg-spotify-gray-800 hover:bg-spotify-gray-700 p-4 rounded-lg cursor-pointer transition-all duration-300 group"
+                className="bg-spotify-gray-800 hover:bg-spotify-gray-700 p-4 rounded-lg cursor-pointer transition-all duration-300 ease-in-out group transform hover:scale-105 hover:shadow-2xl"
               >
                 <div className="relative mb-4">
                   <div
