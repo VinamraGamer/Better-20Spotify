@@ -104,11 +104,15 @@ const browseCategories = [
 export default function Search() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<Song[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
   const { dispatch } = usePlayer();
 
-  const handleSearch = (query: string) => {
+  const handleSearch = async (query: string) => {
     setSearchQuery(query);
     if (query.trim()) {
+      setIsSearching(true);
+      // Simulate API delay for smooth UX
+      await new Promise((resolve) => setTimeout(resolve, 300));
       const results = mockSongs.filter(
         (song) =>
           song.title.toLowerCase().includes(query.toLowerCase()) ||
@@ -116,8 +120,10 @@ export default function Search() {
           song.album.toLowerCase().includes(query.toLowerCase()),
       );
       setSearchResults(results);
+      setIsSearching(false);
     } else {
       setSearchResults([]);
+      setIsSearching(false);
     }
   };
 
