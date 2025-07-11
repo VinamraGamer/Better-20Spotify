@@ -266,7 +266,7 @@ export default function Index() {
                       e.stopPropagation();
                       handlePlayPlaylist(mockSongs);
                     }}
-                    className="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green text-black hover:bg-spotify-green-hover opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out translate-y-2 group-hover:translate-y-0 shadow-lg transform hover:scale-110 active:scale-95"
+                    className="absolute bottom-3 right-3 w-14 h-14 rounded-full bg-gradient-to-br from-spotify-green to-spotify-green-light text-black hover:from-spotify-green-light hover:to-spotify-green opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out translate-y-4 group-hover:translate-y-0 shadow-glow hover:shadow-xl transform hover:scale-110 active:scale-95"
                   >
                     <Play className="w-5 h-5 fill-current" />
                   </Button>
@@ -312,7 +312,7 @@ export default function Index() {
                       e.stopPropagation();
                       handlePlayPlaylist(mockSongs);
                     }}
-                    className="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green text-black hover:bg-spotify-green-hover opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out translate-y-2 group-hover:translate-y-0 shadow-lg transform hover:scale-110 active:scale-95"
+                    className="absolute bottom-3 right-3 w-14 h-14 rounded-full bg-gradient-to-br from-spotify-green to-spotify-green-light text-black hover:from-spotify-green-light hover:to-spotify-green opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out translate-y-4 group-hover:translate-y-0 shadow-glow hover:shadow-xl transform hover:scale-110 active:scale-95"
                   >
                     <Play className="w-5 h-5 fill-current" />
                   </Button>
@@ -359,7 +359,7 @@ export default function Index() {
                       e.stopPropagation();
                       handlePlayPlaylist(mockSongs);
                     }}
-                    className="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-spotify-green text-black hover:bg-spotify-green-hover opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out translate-y-2 group-hover:translate-y-0 shadow-lg transform hover:scale-110 active:scale-95"
+                    className="absolute bottom-3 right-3 w-14 h-14 rounded-full bg-gradient-to-br from-spotify-green to-spotify-green-light text-black hover:from-spotify-green-light hover:to-spotify-green opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out translate-y-4 group-hover:translate-y-0 shadow-glow hover:shadow-xl transform hover:scale-110 active:scale-95"
                   >
                     <Play className="w-5 h-5 fill-current" />
                   </Button>
