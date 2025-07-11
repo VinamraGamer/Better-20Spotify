@@ -28,14 +28,17 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const navigate = useNavigate();
-  const { state: playerState, dispatch } = usePlayer();
+  const { state: playerState, dispatch, audioRef } = usePlayer();
 
   const isActive = (path: string) => location.pathname === path;
 
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, "0")}`;
+  const handleProgressChange = (value: number[]) => {
+    const audio = audioRef.current;
+    if (!audio || !playerState.duration) return;
+
+    const newTime = (value[0] / 100) * playerState.duration;
+    audio.currentTime = newTime;
+    dispatch({ type: "SET_CURRENT_TIME", payload: newTime });
   };
 
   return (
