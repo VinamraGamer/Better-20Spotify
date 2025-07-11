@@ -136,7 +136,7 @@ export default function Search() {
     <Layout>
       <div className="p-6">
         {/* Search Input */}
-        <div className="mb-8">
+        <div className="mb-12 relative z-10">
           <div className="relative max-w-md">
             <SearchIcon className="absolute left-3 top-3 w-5 h-5 text-spotify-gray-400" />
             <Input
@@ -144,7 +144,7 @@ export default function Search() {
               placeholder="What do you want to listen to?"
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
-              className="pl-12 h-12 bg-white text-black border-0 placeholder:text-gray-500 focus:ring-2 focus:ring-spotify-green transition-all duration-300 ease-in-out focus:scale-105 shadow-lg hover:shadow-xl"
+              className="pl-12 h-14 bg-white text-black border-0 placeholder:text-gray-500 focus:ring-2 focus:ring-spotify-green transition-all duration-300 ease-in-out focus:scale-105 shadow-modern hover:shadow-glow rounded-xl text-lg font-medium"
             />
           </div>
         </div>
@@ -161,14 +161,16 @@ export default function Search() {
 
         {/* Search Results */}
         {!isSearching && searchResults.length > 0 && (
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-6">Songs</h2>
+          <div className="mb-12 relative z-10">
+            <h2 className="text-3xl font-black text-white mb-8 tracking-tight">
+              Songs
+            </h2>
             <div className="space-y-2">
               {searchResults.map((song, index) => (
                 <div
                   key={song.id}
                   onClick={() => handlePlaySong(song)}
-                  className="flex items-center gap-4 p-2 rounded-md hover:bg-spotify-gray-700 group cursor-pointer transition-all duration-200 ease-in-out transform hover:scale-[1.02] hover:shadow-lg"
+                  className="flex items-center gap-4 p-4 rounded-xl glass backdrop-blur-xl group cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-[1.02] shadow-modern hover:shadow-glow border border-white border-opacity-5 hover:border-opacity-20"
                 >
                   <div className="w-8 text-spotify-gray-400 text-sm">
                     {index + 1}
