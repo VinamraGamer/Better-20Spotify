@@ -194,10 +194,10 @@ export default function Layout({ children }: LayoutProps) {
           <div className="w-14 h-14 bg-spotify-gray-600 rounded flex-shrink-0"></div>
           <div className="min-w-0">
             <div className="text-sm font-medium text-white truncate">
-              Song Title
+              {playerState.currentSong?.title || "No song playing"}
             </div>
             <div className="text-xs text-spotify-gray-400 truncate">
-              Artist Name
+              {playerState.currentSong?.artist || ""}
             </div>
           </div>
           <Button
