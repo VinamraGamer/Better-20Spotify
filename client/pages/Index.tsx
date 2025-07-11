@@ -206,7 +206,8 @@ export default function Index() {
             {recentlyPlayed.slice(0, 6).map((item) => (
               <div
                 key={item.id}
-                className="bg-spotify-gray-700 bg-opacity-80 hover:bg-opacity-100 rounded-md flex items-center gap-4 group cursor-pointer transition-all duration-300"
+                onClick={() => handlePlayPlaylist(mockSongs)}
+                className="bg-spotify-gray-700 bg-opacity-80 hover:bg-opacity-100 rounded-md flex items-center gap-4 group cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:shadow-xl"
               >
                 <div
                   className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-l-md flex-shrink-0`}
@@ -219,8 +220,11 @@ export default function Index() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => handlePlayPlaylist(mockSongs)}
-                  className="w-12 h-12 rounded-full bg-spotify-green text-black hover:bg-spotify-green-hover opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 mr-4"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handlePlayPlaylist(mockSongs);
+                  }}
+                  className="w-12 h-12 rounded-full bg-spotify-green text-black hover:bg-spotify-green-hover opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out translate-y-2 group-hover:translate-y-0 mr-4 transform hover:scale-110 active:scale-95 shadow-lg"
                 >
                   <Play className="w-5 h-5 fill-current" />
                 </Button>
