@@ -190,10 +190,11 @@ export default function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Bottom Player */}
-      <div className="h-20 bg-spotify-gray-800 border-t border-spotify-gray-600 flex items-center px-4">
+      <div className="h-20 glass-dark backdrop-blur-2xl border-t border-white border-opacity-10 flex items-center px-4 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-spotify-green to-spotify-green-light opacity-5"></div>
         {/* Currently Playing */}
-        <div className="flex items-center gap-4 w-80 min-w-0">
-          <div className="w-14 h-14 bg-spotify-gray-600 rounded flex-shrink-0"></div>
+        <div className="flex items-center gap-4 w-80 min-w-0 relative z-10">
+          <div className="w-14 h-14 bg-gradient-to-br from-spotify-gray-600 to-spotify-gray-700 rounded-lg flex-shrink-0 shadow-modern border border-white border-opacity-10"></div>
           <div className="min-w-0">
             <div className="text-sm font-medium text-white truncate">
               {playerState.currentSong?.title || "No song playing"}
@@ -212,7 +213,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
 
         {/* Player Controls */}
-        <div className="flex-1 flex flex-col items-center gap-2 px-2 sm:px-8">
+        <div className="flex-1 flex flex-col items-center gap-2 px-2 sm:px-8 relative z-10">
           {/* Control Buttons */}
           <div className="flex items-center gap-2 sm:gap-4">
             <Button
@@ -293,7 +294,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
 
         {/* Volume and Additional Controls */}
-        <div className="hidden lg:flex items-center gap-2 w-80 justify-end">
+        <div className="hidden lg:flex items-center gap-2 w-80 justify-end relative z-10">
           <Button
             variant="ghost"
             size="sm"
