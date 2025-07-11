@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   Home,
   Search,
