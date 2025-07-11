@@ -216,18 +216,20 @@ export default function Search() {
 
         {/* Browse All */}
         {!searchQuery && !isSearching && (
-          <div>
-            <h2 className="text-2xl font-bold text-white mb-6">Browse all</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="relative z-10">
+            <h2 className="text-3xl font-black text-white mb-8 tracking-tight">
+              Browse all
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
               {browseCategories.map((category) => (
                 <div
                   key={category.id}
-                  className={`${category.color} rounded-lg p-4 aspect-square cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out relative overflow-hidden transform hover:shadow-2xl hover:brightness-110`}
+                  className={`${category.color} rounded-2xl p-6 aspect-square cursor-pointer hover:scale-105 transition-all duration-500 ease-out relative overflow-hidden transform shadow-modern hover:shadow-glow-purple hover:brightness-110`}
                 >
-                  <h3 className="text-white font-bold text-lg mb-2">
+                  <h3 className="text-white font-black text-xl mb-2 tracking-tight">
                     {category.title}
                   </h3>
-                  <div className="absolute -bottom-2 -right-2 w-16 h-16 bg-black bg-opacity-20 rounded-full transform rotate-12"></div>
+                  <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-black bg-opacity-30 rounded-2xl transform rotate-12 backdrop-blur-sm"></div>
                 </div>
               ))}
             </div>
