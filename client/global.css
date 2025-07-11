@@ -172,4 +172,83 @@
       0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
+
+  /* Glassmorphism utilities */
+  .glass {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Modern gradient backgrounds */
+  .bg-gradient-modern {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .bg-gradient-spotify {
+    background: linear-gradient(135deg, #1db954 0%, #1ed760 50%, #191414 100%);
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, #0a0a0a 0%, #181818 50%, #121212 100%);
+  }
+
+  /* Enhanced shadows */
+  .shadow-modern {
+    box-shadow:
+      0 25px 50px -12px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .shadow-glow {
+    box-shadow:
+      0 0 20px rgba(29, 185, 84, 0.3),
+      0 0 40px rgba(29, 185, 84, 0.1);
+  }
+
+  .shadow-glow-purple {
+    box-shadow:
+      0 0 20px rgba(102, 126, 234, 0.3),
+      0 0 40px rgba(102, 126, 234, 0.1);
+  }
+
+  /* Modern text gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated gradients */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .bg-animated-gradient {
+    background: linear-gradient(-45deg, #1db954, #1ed760, #667eea, #764ba2);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
 }
