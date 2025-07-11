@@ -213,7 +213,7 @@ export default function Search() {
         )}
 
         {/* Browse All */}
-        {!searchQuery && (
+        {!searchQuery && !isSearching && (
           <div>
             <h2 className="text-2xl font-bold text-white mb-6">Browse all</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
