@@ -150,7 +150,8 @@ export default function Search() {
               {searchResults.map((song, index) => (
                 <div
                   key={song.id}
-                  className="flex items-center gap-4 p-2 rounded-md hover:bg-spotify-gray-700 group cursor-pointer"
+                  onClick={() => handlePlaySong(song)}
+                  className="flex items-center gap-4 p-2 rounded-md hover:bg-spotify-gray-700 group cursor-pointer transition-all duration-200 ease-in-out transform hover:scale-[1.02] hover:shadow-lg"
                 >
                   <div className="w-8 text-spotify-gray-400 text-sm">
                     {index + 1}
