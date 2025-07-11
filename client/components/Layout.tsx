@@ -273,11 +273,19 @@ export default function Layout({ children }: LayoutProps) {
           {/* Progress Bar */}
           <div className="flex items-center gap-2 w-full max-w-md">
             <span className="hidden sm:block text-xs text-spotify-gray-400 w-10 text-right">
-              0:00
+              {formatTime(Math.floor((playerState.progress / 100) * 225))}
             </span>
-            <Slider defaultValue={[30]} max={100} step={1} className="flex-1" />
+            <Slider
+              value={[playerState.progress]}
+              onValueChange={(value) =>
+                dispatch({ type: "SET_PROGRESS", payload: value[0] })
+              }
+              max={100}
+              step={1}
+              className="flex-1"
+            />
             <span className="hidden sm:block text-xs text-spotify-gray-400 w-10">
-              3:45
+              {playerState.currentSong?.duration || "0:00"}
             </span>
           </div>
         </div>
