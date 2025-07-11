@@ -28,8 +28,15 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
   const navigate = useNavigate();
+  const { state: playerState, dispatch } = usePlayer();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
+  };
 
   return (
     <div className="h-screen bg-black text-white flex flex-col">
