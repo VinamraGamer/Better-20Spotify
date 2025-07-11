@@ -233,7 +233,7 @@ export default function Search() {
         )}
 
         {/* No Results */}
-        {searchQuery && searchResults.length === 0 && (
+        {searchQuery && !isSearching && searchResults.length === 0 && (
           <div className="text-center py-16">
             <h3 className="text-white text-xl font-semibold mb-2">
               No results found for "{searchQuery}"
