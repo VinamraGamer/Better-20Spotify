@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Play, Heart, MoreHorizontal, Clock } from "lucide-react";
+import { usePlayer, Song } from "../context/PlayerContext";
 
 const featuredPlaylists = [
   {
