@@ -119,8 +119,10 @@ export default function Library() {
     <Layout>
       <div className="p-6">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold text-white">Your Library</h1>
+        <div className="flex items-center justify-between mb-10 relative z-10">
+          <h1 className="text-4xl font-black text-white tracking-tight">
+            Your <span className="text-gradient">Library</span>
+          </h1>
           <div className="flex items-center gap-2">
             <Button
               variant="ghost"
