@@ -96,7 +96,12 @@ export default function Layout({ children }: LayoutProps) {
             <div className="flex items-center justify-between mb-4 px-3">
               <Button
                 variant="ghost"
-                className="justify-start gap-4 text-spotify-gray-300 hover:text-white h-10 px-0"
+                onClick={() => navigate("/library")}
+                className={`justify-start gap-4 h-10 px-0 ${
+                  isActive("/library")
+                    ? "text-white"
+                    : "text-spotify-gray-300 hover:text-white"
+                }`}
               >
                 <Library className="w-6 h-6" />
                 Your Library
