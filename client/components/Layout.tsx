@@ -140,7 +140,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
 
         {/* Player Controls */}
-        <div className="flex-1 flex flex-col items-center gap-2 px-8">
+        <div className="hidden sm:flex flex-1 flex-col items-center gap-2 px-8">
           {/* Control Buttons */}
           <div className="flex items-center gap-4">
             <Button
