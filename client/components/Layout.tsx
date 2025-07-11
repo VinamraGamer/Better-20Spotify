@@ -216,13 +216,19 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               size="sm"
-              className="hidden sm:block p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
+              onClick={() => dispatch({ type: "TOGGLE_SHUFFLE" })}
+              className={`hidden sm:block p-0 w-8 h-8 ${
+                playerState.isShuffled
+                  ? "text-spotify-green"
+                  : "text-spotify-gray-400 hover:text-white"
+              }`}
             >
               <Shuffle className="w-4 h-4" />
             </Button>
             <Button
               variant="ghost"
               size="sm"
+              onClick={() => dispatch({ type: "PREVIOUS_SONG" })}
               className="p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
             >
               <SkipBack className="w-4 h-4" />
@@ -230,13 +236,19 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               size="sm"
+              onClick={() => dispatch({ type: "TOGGLE_PLAY" })}
               className="p-0 w-10 h-10 bg-white text-black hover:bg-gray-200 rounded-full"
             >
-              <Play className="w-5 h-5 fill-current" />
+              {playerState.isPlaying ? (
+                <Pause className="w-5 h-5" />
+              ) : (
+                <Play className="w-5 h-5 fill-current" />
+              )}
             </Button>
             <Button
               variant="ghost"
               size="sm"
+              onClick={() => dispatch({ type: "NEXT_SONG" })}
               className="p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
             >
               <SkipForward className="w-4 h-4" />
@@ -244,9 +256,17 @@ export default function Layout({ children }: LayoutProps) {
             <Button
               variant="ghost"
               size="sm"
-              className="hidden sm:block p-0 w-8 h-8 text-spotify-gray-400 hover:text-white"
+              onClick={() => dispatch({ type: "TOGGLE_REPEAT" })}
+              className={`hidden sm:block p-0 w-8 h-8 ${
+                playerState.repeatMode !== "off"
+                  ? "text-spotify-green"
+                  : "text-spotify-gray-400 hover:text-white"
+              }`}
             >
               <Repeat className="w-4 h-4" />
+              {playerState.repeatMode === "one" && (
+                <div className="absolute bottom-0 right-0 w-1 h-1 bg-spotify-green rounded-full"></div>
+              )}
             </Button>
           </div>
 
