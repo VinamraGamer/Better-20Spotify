@@ -222,12 +222,12 @@ export default function Layout({ children }: LayoutProps) {
         {/* Player Controls */}
         <div className="flex-1 flex flex-col items-center gap-2 px-2 sm:px-8 relative z-10">
           {/* Control Buttons */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center justify-center gap-2 sm:gap-4 h-12">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => dispatch({ type: "TOGGLE_SHUFFLE" })}
-              className={`hidden sm:block p-0 w-10 h-10 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 ${
+              className={`hidden sm:flex p-0 w-10 h-10 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 items-center justify-center ${
                 playerState.isShuffled
                   ? "text-spotify-green bg-spotify-green bg-opacity-20 shadow-glow"
                   : "text-spotify-gray-400 hover:text-white glass"
@@ -239,7 +239,7 @@ export default function Layout({ children }: LayoutProps) {
               variant="ghost"
               size="sm"
               onClick={() => dispatch({ type: "PREVIOUS_SONG" })}
-              className="p-0 w-8 h-8 text-spotify-gray-400 hover:text-white transition-all duration-200 ease-in-out transform hover:scale-110 active:scale-95"
+              className="p-0 w-10 h-10 flex items-center justify-center text-spotify-gray-400 hover:text-white transition-all duration-200 ease-in-out transform hover:scale-110 active:scale-95"
             >
               <SkipBack className="w-4 h-4" />
             </Button>
@@ -247,7 +247,7 @@ export default function Layout({ children }: LayoutProps) {
               variant="ghost"
               size="sm"
               onClick={() => dispatch({ type: "TOGGLE_PLAY" })}
-              className="p-0 w-12 h-12 bg-gradient-to-br from-white to-gray-100 text-black hover:from-gray-100 hover:to-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-115 active:scale-95 shadow-glow hover:shadow-xl border-2 border-white border-opacity-20"
+              className="p-0 w-12 h-12 flex items-center justify-center bg-gradient-to-br from-white to-gray-100 text-black hover:from-gray-100 hover:to-white rounded-full transition-all duration-300 ease-in-out transform hover:scale-115 active:scale-95 shadow-glow hover:shadow-xl border-2 border-white border-opacity-20"
             >
               {playerState.isPlaying ? (
                 <Pause className="w-5 h-5" />
@@ -259,7 +259,7 @@ export default function Layout({ children }: LayoutProps) {
               variant="ghost"
               size="sm"
               onClick={() => dispatch({ type: "NEXT_SONG" })}
-              className="p-0 w-8 h-8 text-spotify-gray-400 hover:text-white transition-all duration-200 ease-in-out transform hover:scale-110 active:scale-95"
+              className="p-0 w-10 h-10 flex items-center justify-center text-spotify-gray-400 hover:text-white transition-all duration-200 ease-in-out transform hover:scale-110 active:scale-95"
             >
               <SkipForward className="w-4 h-4" />
             </Button>
@@ -267,7 +267,7 @@ export default function Layout({ children }: LayoutProps) {
               variant="ghost"
               size="sm"
               onClick={() => dispatch({ type: "TOGGLE_REPEAT" })}
-              className={`hidden sm:block p-0 w-10 h-10 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 ${
+              className={`hidden sm:flex p-0 w-10 h-10 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 items-center justify-center relative ${
                 playerState.repeatMode !== "off"
                   ? "text-spotify-green bg-spotify-green bg-opacity-20 shadow-glow"
                   : "text-spotify-gray-400 hover:text-white glass"
