@@ -21,10 +21,14 @@ interface PlayerState {
   currentSong: Song | null;
   isPlaying: boolean;
   progress: number;
+  currentTime: number;
+  duration: number;
   volume: number;
   queue: Song[];
   isShuffled: boolean;
   repeatMode: "off" | "all" | "one";
+  isLoading: boolean;
+  error: string | null;
 }
 
 type PlayerAction =
