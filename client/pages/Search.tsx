@@ -102,7 +102,8 @@ const browseCategories = [
 
 export default function Search() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<typeof mockSongs>([]);
+  const [searchResults, setSearchResults] = useState<Song[]>([]);
+  const { dispatch } = usePlayer();
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -117,6 +118,11 @@ export default function Search() {
     } else {
       setSearchResults([]);
     }
+  };
+
+  const handlePlaySong = (song: Song) => {
+    dispatch({ type: "PLAY_SONG", payload: song });
+    dispatch({ type: "SET_QUEUE", payload: mockSongs });
   };
 
   return (
