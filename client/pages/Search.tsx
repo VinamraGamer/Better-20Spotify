@@ -19,6 +19,7 @@ const mockSongs: Song[] = [
     album: "After Hours",
     duration: "3:20",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/magic-chime-02.mp3",
   },
   {
     id: "2",
@@ -27,6 +28,7 @@ const mockSongs: Song[] = [
     album: "÷ (Divide)",
     duration: "3:53",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/page-flip-01a.mp3",
   },
   {
     id: "3",
@@ -35,6 +37,7 @@ const mockSongs: Song[] = [
     album: "21",
     duration: "4:45",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3",
   },
   {
     id: "4",
@@ -43,6 +46,7 @@ const mockSongs: Song[] = [
     album: "Fine Line",
     duration: "2:54",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/magic-chime-02.mp3",
   },
   {
     id: "5",
@@ -51,6 +55,7 @@ const mockSongs: Song[] = [
     album: "Future Nostalgia",
     duration: "3:23",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/page-flip-01a.mp3",
   },
   {
     id: "6",
@@ -59,6 +64,7 @@ const mockSongs: Song[] = [
     album: "SOUR",
     duration: "2:58",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3",
   },
   {
     id: "7",
@@ -67,6 +73,7 @@ const mockSongs: Song[] = [
     album: "F*CK LOVE 3",
     duration: "2:21",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/magic-chime-02.mp3",
   },
   {
     id: "8",
@@ -75,6 +82,7 @@ const mockSongs: Song[] = [
     album: "MONTERO",
     duration: "3:32",
     image: "/placeholder.svg",
+    audioUrl: "https://www.soundjay.com/misc/sounds/page-flip-01a.mp3",
   },
 ];
 
